@@ -67,4 +67,36 @@ end
 # Object representing a book
 class BookInStock
   # YOUR CODE HERE
+  def isbn
+    @isbn
+  end
+  
+  def isbn=(isbn)
+    @isbn = isbn
+  end
+
+  def price
+    @price
+  end
+
+  def price=(price)
+    @price = price
+  end
+  
+  def initialize (isbn, price)
+    if price <=0 
+      raise ArgumentError
+    end
+
+    if isbn.empty?
+      raise ArgumentError
+    end
+
+    @isbn = isbn
+    @price = price
+  end
+
+  def price_as_string 
+    return "$#{'%.2f' % @price}"
+  end
 end
